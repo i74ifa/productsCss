@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/tooltip.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>System</title>
+</head>
+
+<body>
+
+    <div class="centered">
+        <div class="grid">
+            <div class="col-4">
+                <button class="btn" short-val="ctrl_c" tooltip="Ctrl+C">Ctrl+C</button>
+            </div>
+            <div class="col-4">
+                <button class="btn" short-val="A">A</button>
+            </div>
+            <div class="col-4">
+                <button class="btn" short-val="B">B</button>
+            </div>
+            <div class="col-4">
+                <button class="btn" short-val="C">C</button>
+            </div>
+            <div class="col-4">
+                <button class="btn" short-val="C">C</button>
+            </div>
+            <div class="col-4">
+                <button class="btn" short-val="C">C</button>
+            </div>
+            <div class="col-4">
+                <button short-val="f5" class="btn">F5</button>
+            </div>
+            <div class="col-4">
+                <button short-val="f3" class="btn">F3</button>
+            </div>
+        </div>
+
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.js"
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+    crossorigin="anonymous"></script>
+  <script src="/js/jquery.hotkeys.js"></script>
+    <script src="/js/script.js"></script>
+
+    <script>
+        var btnS = document.getElementsByClassName('btn');
+        // events btn clicked
+        for (i = 0; i < btnS.length; i++) {
+            btnS[i].onclick = changeContent
+        }
+        function changeContent() {
+            var beforeContent = this.innerHTML;
+            this.innerHTML = 'ClickedMe';
+
+            setTimeout(() => {
+                this.innerHTML = beforeContent
+            }, 5 * 1000);
+        }
+    </script>
+</body>
+
+</html>
